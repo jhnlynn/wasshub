@@ -18,8 +18,30 @@ watches for orders to be created, cancels after 15-mins no-ops.
 5. payments:
 handles credit card payments. Cancels orders if payments failed, completes if payments succeded.
 
-## React App to Handle Errors
+To start your services locally:
+run `skaffold dev`
+
+## Handling Errors
 Different microservices can have different error info. To make life easier, and to make identical to only parse one kind of response, make sure each service should obey the "message rules".
+
+### Error Handling Middleware
+
+#### 1. Both errors:
+RequestValidationError: `reasons = [{msg: 'Bad Email', param: 'email'}]`
+DatabaseConnectionError: `reason: 'Failed to connect to database'`
+
+#### 2. Is this an instance of RequestValidationError?
+If yes: 
+    Great, take your 'reasons', send it to the user
+
+If no: 
+    Is this an instance of DatabaseConnectionError? 
+        if yes:
+            take 'reason', send to user
+        if no:
+            unknown error, send generic error msg
+
+**managed to extract error handling methods from error-handling-middleware, to the specific error classes**
 
 ## TROUBLESHOOTING:
 1. This site can’t be reached
