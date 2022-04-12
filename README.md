@@ -43,6 +43,9 @@ If no:
 
 **managed to extract error handling methods from error-handling-middleware, to the specific error classes**
 
+### Use Abstract Class To Handle Errors
+each custom error handling class should extend the **Abstract Class**: CustomError, guaranteeing the format of errors back to the client.
+
 ## TROUBLESHOOTING:
 1. This site can’t be reached
 First, reinstall ingress-nginx from https://kubernetes.github.io/ingress-nginx/deploy/
