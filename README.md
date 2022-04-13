@@ -46,6 +46,13 @@ If no:
 ### Use Abstract Class To Handle Errors
 each custom error handling class should extend the **Abstract Class**: CustomError, guaranteeing the format of errors back to the client.
 
+## barrior when using TS with Mongoose
+### Issue #1
+Mongoose will not tell TS about the different properties that are trying to pass in, as TS required
+
+### Issue #2
+Mongoose might return some properties that does not match with that of model in TS.
+
 ## TROUBLESHOOTING:
 1. This site can’t be reached
 First, reinstall ingress-nginx from https://kubernetes.github.io/ingress-nginx/deploy/
