@@ -2,6 +2,13 @@ microservices for tickets sales, from one people to another.
 
 Each customer has up to 15 mins to check out their ticket. During this time, if the other customers clicks the button "BUY", which ticket is being processed, it'll show "The ticket is being checking out by someone else, please come back later"
 
+## keywords:
+docker
+authentication (admin users can generate free coupons, based on the JWT provided)
+error-handling
+mongoose + ts
+
+
 ## services
 1. auth: 
 everything relates to user account ops
