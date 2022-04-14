@@ -3,6 +3,7 @@ microservices for tickets sales, from one people to another.
 Each customer has up to 15 mins to check out their ticket. During this time, if the other customers clicks the button "BUY", which ticket is being processed, it'll show "The ticket is being checking out by someone else, please come back later"
 
 run in terminal in root directory: `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=fkaewfj8_fhuiewaf`
+To run in docker with k8s, run in root directory: `skaffold dev`
 
 ## keywords:
 docker
