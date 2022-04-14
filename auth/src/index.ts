@@ -25,11 +25,12 @@ app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
-app.use(errorHandler);
 
 app.all('*', async (req, res) => {
     throw new NotFoundError();
 });
+
+app.use(errorHandler);
 
 const start = async () => {
     if (!process.env.JWT_KEY) {
