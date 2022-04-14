@@ -28,6 +28,7 @@ Different microservices can have different error info. To make life easier, and 
 
 #### 1. Both errors:
 RequestValidationError: `reasons = [{msg: 'Bad Email', param: 'email'}]`
+
 DatabaseConnectionError: `reason: 'Failed to connect to database'`
 
 #### 2. Is this an instance of RequestValidationError?
@@ -52,6 +53,20 @@ Mongoose will not tell TS about the different properties that are trying to pass
 
 ### Issue #2
 Mongoose might return some properties that does not match with that of model in TS.
+
+## issues with authentication
+#### choice #1: individual services rely on the auth service
+pros: Change to auth state are immediately reflected
+cons: Auth services go down ==> entire app is broken
+
+#### choice #2: individual services know how to authenticate a user
+pros: Auth service does not influence individual services
+cons: some user got banned? Errr, I just gave them the keys to my service
+
+###### resolution to choice #2
+Only make that JWT viable for, let's say, 15 mins.
+1. Give refreshed token when user is valid and user's token is expired;
+2. Ask user themselves to refesh the token.
 
 ## TROUBLESHOOTING:
 1. This site can’t be reached
