@@ -2,11 +2,23 @@ microservices for tickets sales, from one people to another.
 
 Each customer has up to 15 mins to check out their ticket. During this time, if the other customers clicks the button "BUY", which ticket is being processed, it'll show "The ticket is being checking out by someone else, please come back later"
 
+run in terminal in root directory: `kubectl create secret generic jwt-sece secret generic jwt-secret --from-literal=JWT_KEY=fkaewfj8_fhuiewaf`
+
 ## keywords:
 docker
+
 authentication (admin users can generate free coupons, based on the JWT provided)
+
 error-handling
+
 mongoose + ts
+
+modify the User model(schema) with interfaces to make it viable to work with ts and mongoose. And also change the keys (, to what we want) back from mongodb with customized 'toJSON'
+
+SSR (server side rendering, for reason of SEO (search engine optimization)?)
+
+response requests and handle errors with normalization: follow the same pattern: since different frameworks, languages can response with different patterns, when without constraints.
+
 
 
 ## services
