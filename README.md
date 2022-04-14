@@ -96,3 +96,5 @@ And then rerun `skaffold dev`
 
 2. Upon getting 'Not Secure' in Chrome
 Click on blank space, type 'thisisunsafe'.
+
+3. Refer to mongoose v6, we no longer need to set `useNewUrlParser` and other configs when connecting to MongoDB, refer to: https://mongoosejs.com/docs/migrating_to_6.html#no-more-deprecation-warning-options
