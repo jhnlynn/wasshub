@@ -88,6 +88,12 @@ Only make that JWT viable for, let's say, 15 mins.
 1. Give refreshed token when user is valid and user's token is expired;
 2. Ask user themselves to refesh the token.
 
+## Code sharing and Reuse Between services using NPM organization
+1. npm organization
+2. publishing NPM modules
+3. Easy publish commands:
+`npm version patch && npm run build && npm publish`
+
 ## TROUBLESHOOTING:
 1. This site can’t be reached
 First, reinstall ingress-nginx from https://kubernetes.github.io/ingress-nginx/deploy/
