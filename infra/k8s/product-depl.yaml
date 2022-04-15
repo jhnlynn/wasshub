@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: stuff-depl
+  name: product-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: stuff
+      app: product
   template:
     metadata:
       labels:
-        app: stuff
+        app: product
     spec:
       containers:
-        - name: stuff
-          image: wasscorp/stuff
+        - name: product
+          image: wasscorp/product
           env: 
             - name: MONGO_URI
-              value: 'mongodb://stuff-mongo-srv:27017/stuff'
+              value: 'mongodb://product-mongo-srv:27017/product'
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
@@ -27,12 +27,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: stuff-srv
+  name: product-srv
 spec:
   selector:
-    app: stuff
+    app: product
   ports:
-    - name: stuff
+    - name: product
       protocol: TCP
       port: 3000
       targetPort: 3000

@@ -24,8 +24,8 @@ build:
         manual:
           - src: '**/*.js'
             dest: .
-    - image: wasscorp/stuff
-      context: stuff
+    - image: wasscorp/product
+      context: product
       docker:
         dockerfile: Dockerfile
       sync:
