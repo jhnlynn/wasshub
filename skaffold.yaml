@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: cygnetops/auth
+    - image: wasscorp/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -16,11 +16,19 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
-    - image: cygnetops/ticketing-client
+    - image: wasscorp/ticketing-client
       context: client
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
           - src: '**/*.js'
+            dest: .
+    - image: wasscorp/stuff
+      context: stuff
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
             dest: .
