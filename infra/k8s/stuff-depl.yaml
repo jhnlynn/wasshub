@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stuff-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stuff
+  template:
+    metadata:
+      labels:
+        app: stuff
+    spec:
+      containers:
+        - name: stuff
+          image: wasscorp/stuff
+          env: 
+            - name: MONGO_URI
+              value: 'mongodb://stuff-mongo-srv:27017/stuff'
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stuff-srv
+spec:
+  selector:
+    app: stuff
+  ports:
+    - name: stuff
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
