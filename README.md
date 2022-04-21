@@ -1,6 +1,6 @@
-microservices for tickets sales, from one people to another.
+microservices for digital sales, from one student to another.
 
-Each customer has up to 15 mins to check out their ticket. During this time, if the other customers clicks the button "BUY", which ticket is being processed, it'll show "The ticket is being checking out by someone else, please come back later"
+Each student has up to 15 mins to check out their ticket. During this time, if the other customers clicks the button "BUY", which ticket is being processed, it'll show "The ticket is being checking out by someone else, please come back later"
 
 run in terminal in root directory: `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=YOUR_JWT`
 To run in docker with k8s, run in root directory: `skaffold dev`
@@ -67,7 +67,7 @@ If no:
 ### Use Abstract Class To Handle Errors
 each custom error handling class should extend the **Abstract Class**: CustomError, guaranteeing the format of errors back to the client.
 
-## barrior when using TS with Mongoose
+## barrier when using TS with Mongoose
 ### Issue #1
 Mongoose will not tell TS about the different properties that are trying to pass in, as TS required
 
@@ -86,7 +86,7 @@ cons: some user got banned? Errr, I just gave them the keys to my service
 ###### resolution to choice #2
 Only make that JWT viable for, let's say, 15 mins.
 1. Give refreshed token when user is valid and user's token is expired;
-2. Ask user themselves to refesh the token.
+2. Ask user themselves to refresh the token.
 
 ## Code sharing and Reuse Between services using NPM organization
 1. npm organization
