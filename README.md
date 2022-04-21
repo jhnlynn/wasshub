@@ -1,6 +1,6 @@
 microservices for digital sales, from one student to another.
 
-Each student has up to 15 mins to check out their ticket. During this time, if the other customers clicks the button "BUY", which ticket is being processed, it'll show "The ticket is being checking out by someone else, please come back later"
+Each student has up to 15 mins to check out their stuff. During this time, if the other customers clicks the button "BUY", which stuff is being processed, it'll show "The stuff is being checking out by someone else, please come back later"
 
 run in terminal in root directory: `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=YOUR_JWT`
 To run in docker with k8s, run in root directory: `skaffold dev`
@@ -26,8 +26,8 @@ response requests and handle errors with normalization: follow the same pattern:
 1. auth: 
 everything relates to user account ops
 
-2. tickets:
-tickets creation / editing. Aware of whether a ticket can be updated
+2. stuff:
+stuff creation / editing. Aware of whether a stuff can be updated
 
 3. orders:
 order creation / edting
@@ -40,6 +40,9 @@ handles credit card payments. Cancels orders if payments failed, completes if pa
 
 To start your services locally:
 run `skaffold dev`
+
+To generate your image, run `docker build -t YOUR_DOCKER_NAME/YOUR_FILEFOLDER .`
+To push your image to your hub, run `docker push YOUR_DOCKER_NAME/YOUR_FILEFOLDER`
 
 ## Handling Errors
 Different microservices can have different error info. To make life easier, and to make identical to only parse one kind of response, make sure each service should obey the "message rules".
