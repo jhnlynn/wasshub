@@ -94,6 +94,9 @@ Only make that JWT viable for, let's say, 15 mins.
 3. Easy publish commands:
 `npm version patch && npm run build && npm publish`
 
+## **NATS Streaming Server**
+NATS and NATS streaming Server are different things
+
 ## TROUBLESHOOTING:
 1. This site can’t be reached
 First, reinstall ingress-nginx from https://kubernetes.github.io/ingress-nginx/deploy/
