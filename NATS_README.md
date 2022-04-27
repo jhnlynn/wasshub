@@ -36,3 +36,9 @@ Method 2 (more reasonable): Graceful Client Shutdown
 `process.on('SIGTERM', () => stan.close())`
 
 So these are watching for interrupt signals or terminate signals, these are signals that are sent to this process.
+
+### Some Issues with NATS Streaming Server
+1. Linstener can fail to process the even
+2. One listener might run faster than the other
+3. NATS might regard a client is still alive when it's dead
+4. We might receive the same even twice
